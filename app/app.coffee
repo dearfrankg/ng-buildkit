@@ -1,4 +1,5 @@
 
+# include major components
 _       = require 'lodash'
 jQuery  = require 'jquery'
 angular = require 'angular'
@@ -24,4 +25,5 @@ console.log('angular', angular)
 console.log('plugin', plugin)
 
 
+# execute non common-js vendor code
 plugin()
