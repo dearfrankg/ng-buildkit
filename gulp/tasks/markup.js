@@ -3,7 +3,7 @@ var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 var pkg = require('../../package.json');
 
-gulp.task('markup', function() {
+gulp.task('markup', ['fonts'], function() {
   var templateData = {
        title: pkg.name
   },
