@@ -26,4 +26,9 @@ console.log('plugin', plugin)
 
 
 # execute non common-js vendor code
-plugin()
+angular.module('NgBuildkit')
+  .run( ($timeout) ->
+    $timeout( ->
+      plugin()
+    , 30)
+  )
