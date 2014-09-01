@@ -1,2 +1,15 @@
-View =  require './view'
-view = new View(el: 'body')
+
+
+_       = require 'lodash'
+jQuery  = require 'jquery'
+angular = require 'angular'
+plugin  = require 'plugin'
+
+
+console.log('lodash', _)
+console.log('jQuery', jQuery)
+console.log('angular', angular)
+console.log('plugin', plugin)
+
+
+

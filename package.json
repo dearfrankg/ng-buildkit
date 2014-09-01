@@ -7,7 +7,8 @@
     "url": "git://github.com/greypants/gulp-starter.git"
   },
   "browser": {
-    "underscore": "backbone/node_modules/underscore",
+    "angular": "./bower_components/angular/angular.js",
+    "lodash": "./node_modules/lodash/lodash.js",
     "plugin": "./src/javascript/vendor/jquery-plugin.js"
   },
   "browserify": {
@@ -23,6 +24,9 @@
       "depends": [
         "jquery:$"
       ]
+    },
+    "angular": {
+      "exports": "angular"
     }
   },
   "devDependencies": {
@@ -44,7 +48,7 @@
     "watchify": "~1.0.2"
   },
   "dependencies": {
-    "backbone": "~1.1.2",
-    "jquery": "~2.1.0"
+    "jquery": "~1.x",
+    "lodash": "^2.4.1"
   }
 }

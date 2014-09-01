@@ -1,0 +1,19 @@
+{
+  "name": "ng-buildkit",
+  "version": "0.0.0",
+  "authors": [
+    "Frank Gutierrez <dearfrankg@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23"
+  }
+}
