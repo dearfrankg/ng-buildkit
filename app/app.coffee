@@ -13,4 +13,4 @@ console.log('plugin', plugin)
 
 
 
-angular.module('GulpStarter', [])
+angular.module('NgBuildkit', [])
