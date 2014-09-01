@@ -7,9 +7,9 @@
     "url": "git://github.com/greypants/gulp-starter.git"
   },
   "browser": {
-    "angular": "./bower_components/angular/angular.js",
+    "angular": "./app/bower_components/angular/angular.js",
     "lodash": "./node_modules/lodash/lodash.js",
-    "plugin": "./src/javascript/vendor/jquery-plugin.js"
+    "plugin": "./app/javascript/vendor/jquery-plugin.js"
   },
   "browserify": {
     "transform": [

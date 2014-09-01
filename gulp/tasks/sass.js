@@ -3,7 +3,7 @@ var sass = require('gulp-ruby-sass');
 var handleErrors = require('../util/handleErrors');
 
 gulp.task('sass', ['images'], function () {
-  return gulp.src('src/sass/*.{sass, scss}')
+  return gulp.src('app/sass/*.{sass, scss}')
     .pipe(sass({
       compass: true,
       bundleExec: true,
