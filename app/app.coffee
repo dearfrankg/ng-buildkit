@@ -13,3 +13,4 @@ console.log('plugin', plugin)
 
 
 
+angular.module('GulpStarter', [])

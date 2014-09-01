@@ -9,7 +9,7 @@
   "browser": {
     "angular": "./app/bower_components/angular/angular.js",
     "lodash": "./node_modules/lodash/lodash.js",
-    "plugin": "./app/javascript/vendor/jquery-plugin.js"
+    "plugin": "./app/modules/vendor/jquery-plugin.js"
   },
   "browserify": {
     "transform": [
