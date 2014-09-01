@@ -8,6 +8,7 @@
   },
   "browser": {
     "angular": "./app/bower_components/angular/angular.js",
+    "angular-route": "./app/bower_components/angular-route/angular-route.js",
     "lodash": "./node_modules/lodash/lodash.js",
     "plugin": "./app/modules/vendor/jquery-plugin.js"
   },
