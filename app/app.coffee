@@ -8,9 +8,9 @@ plugin  = require 'plugin'
 
 # include angular components
 require 'angular-route'
+require './templates'
 
-
-angular.module('NgBuildkit', ['ngRoute'])
+angular.module('NgBuildkit', ['MyPartials', 'ngRoute'])
 
 
 # include app components

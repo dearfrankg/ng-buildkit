@@ -4,4 +4,5 @@ build
 Desktop.ini
 node_modules
 app/bower_components
+app/templates.js
 

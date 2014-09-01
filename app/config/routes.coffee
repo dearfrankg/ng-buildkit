@@ -6,7 +6,7 @@ angular.module('NgBuildkit')
     $routeProvider
 
       .when( '/', {
-        templateUrl: 'modules/index/splash.html'
+        templateUrl: '/partials/modules/index/splash.tpl.html'
         controller: 'SplashCtrl'
       })
 
