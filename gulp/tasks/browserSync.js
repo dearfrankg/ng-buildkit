@@ -7,8 +7,10 @@ var
   defaultFile = "index.html",
   folder      = path.resolve(__dirname, "../../build");
 
-
 gulp.task('browserSync', ['build'], function() {
+
+  gulp.run('unit');
+
   browserSync({
     files: [
       // Watch everything in build
