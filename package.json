@@ -28,6 +28,9 @@
     },
     "angular": {
       "exports": "angular"
+    },
+    "lodash": {
+      "exports": "_"
     }
   },
   "devDependencies": {
