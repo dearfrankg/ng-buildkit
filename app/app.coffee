@@ -16,9 +16,13 @@ require './modules/modules'
 
 
 # test that the libs have exported to global
-console.log('lodash', _)
-console.log('jQuery', $)
-console.log('angular', angular)
-console.log('plugin', plugin)
+checkGlobals = ->
+  if (
+    (typeof _ is 'function') and
+    (typeof $ is 'function') and
+    (typeof angular is 'object') and
+    (typeof plugin is 'function')
+  )
+    console.log('Globals have been verified!: _, $, angular, and plugin.')
 
-
+checkGlobals()
