@@ -2,7 +2,7 @@
 
 angular.module('NgBuildkit')
 
-  .controller('SplashCtrl', ['$scope',  ($scope) ->
+  .controller('HomeCtrl', ['$scope',  ($scope) ->
 
     $scope.features = [
       {name: 'Dependency Management (npm, bower, browserify with browserify-shim)'}

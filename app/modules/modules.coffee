@@ -1,3 +1,3 @@
 
-require './index/splash'
+require './home/home'
 

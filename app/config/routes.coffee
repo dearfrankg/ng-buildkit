@@ -11,8 +11,8 @@ angular.module('NgBuildkit')
       $stateProvider
         .state('home', {
           url: "/",
-          templateUrl: '/partials/modules/index/splash.tpl.html'
-          controller: 'SplashCtrl'
+          templateUrl: '/partials/modules/home/home.tpl.html'
+          controller: 'HomeCtrl'
         })
         .state('about', {
           url: "/about",
