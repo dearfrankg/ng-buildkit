@@ -1,0 +1,10 @@
+{
+  "undef": true,
+  "unused": true,
+  "maxlen": 120,
+  "predef": [
+    "window",
+    "angular",
+    "$"
+  ]
+}
