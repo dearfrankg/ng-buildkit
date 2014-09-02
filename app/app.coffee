@@ -6,12 +6,10 @@ require 'angular'
 require 'plugin'
 
 
-# include angular components
-require 'angular-route'
-
-angular.module('NgBuildkit', ['MyPartials', 'ngRoute'])
+angular.module('NgBuildkit', ['MyPartials', 'ui.router'])
 
 # include app components
+require 'angular-ui-router'
 require './templates'
 require './config/routes'
 require './modules/modules'

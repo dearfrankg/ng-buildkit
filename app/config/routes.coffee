@@ -1,21 +1,22 @@
 
 angular.module('NgBuildkit')
 
-  .config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    ($stateProvider, $urlRouterProvider, $locationProvider) ->
 
-    $locationProvider.html5Mode(true)
+      $locationProvider.html5Mode(true)
 
-    $routeProvider
+      $urlRouterProvider.otherwise("/")
 
-      .when( '/', {
-        templateUrl: '/partials/modules/index/splash.tpl.html'
-        controller: 'SplashCtrl'
-      })
-
-      .when( '/about', {
-        templateUrl: '/partials/modules/about/about.tpl.html'
-      })
-
-      .otherwise('/')
+      $stateProvider
+        .state('home', {
+          url: "/",
+          templateUrl: '/partials/modules/index/splash.tpl.html'
+          controller: 'SplashCtrl'
+        })
+        .state('about', {
+          url: "/about",
+          templateUrl: '/partials/modules/about/about.tpl.html'
+        })
 
   ])

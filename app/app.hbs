@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="/app.css" />
   </head>
 
-  <body ng-app="{{camelCase title}}">
+  <body class="container" ng-app="{{camelCase title}}">
 
-	<div class="container" ng-view />
+  <br>
+
+  <ul class="nav nav-pills">
+    <li><a ui-sref="home">home</a></li>
+    <li><a ui-sref="about">about</a></li>
+  </ul>
+
+	<div ui-view />
 
     <script src="/app.js"></script>
   </body>
