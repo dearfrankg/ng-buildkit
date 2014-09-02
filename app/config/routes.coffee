@@ -1,7 +1,9 @@
 
 angular.module('NgBuildkit')
 
-  .config(['$routeProvider',  ($routeProvider) ->
+  .config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+
+    $locationProvider.html5Mode(true)
 
     $routeProvider
 
@@ -9,5 +11,11 @@ angular.module('NgBuildkit')
         templateUrl: '/partials/modules/index/splash.tpl.html'
         controller: 'SplashCtrl'
       })
+
+      .when( '/about', {
+        templateUrl: '/partials/modules/about/about.tpl.html'
+      })
+
+      .otherwise('/')
 
   ])
