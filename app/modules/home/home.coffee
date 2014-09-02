@@ -2,7 +2,7 @@
 
 angular.module('NgBuildkit')
 
-  .controller('HomeCtrl', ['$scope', '$timeout', ($scope, $timeout) ->
+  .controller('HomeCtrl', ['$scope', ($scope) ->
 
     $scope.features = [
       {name: 'Dependency Management (npm, bower, browserify with browserify-shim)'}
@@ -22,9 +22,7 @@ angular.module('NgBuildkit')
     ]
 
     # execute non common-js vendor code
-    $timeout( ->
-      plugin()
-    , 30)
+    plugin()
 
   ])
 
