@@ -9,7 +9,7 @@ angular.module('NgBuildkit')
       {name: 'Pre and Post Processing (linting, minification)'}
       {name: 'Scripts (javascript and or coffee-script with source maps!)'}
       {name: 'Styles (sass with bootstrap-sass, compass and source maps!)'}
-      {name: 'Images (optimization and interlacing)'}
+      {name: 'Images (optimized and progresive)'}
       {name: 'Markup (dynamic markup using handlebar templates)'}
       {name: 'Handlebars (template processing for any file)'}
       {name: 'BrowserSync (test multiple targets simulatenously)'}

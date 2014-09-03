@@ -9,7 +9,7 @@ var
 
 gulp.task('browserSync', ['build'], function() {
 
-  gulp.run('unit');
+  gulp.start('unit');
 
   browserSync({
     files: [
