@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{camelCase title}}</title>
-    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="{{ assetPath 'app.css' }}" />
   </head>
 
   <body class="container" ng-app="{{camelCase title}}">
@@ -18,6 +18,6 @@
 
 	<div ui-view />
 
-    <script src="/app.js"></script>
+    <script src="{{ assetPath 'app.js' }}"></script>
   </body>
 </html>

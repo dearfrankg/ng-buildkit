@@ -1,12 +1,14 @@
-var gulp = require('gulp');
+var gulp       = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
-var rename = require('gulp-rename');
-var pkg = require('../../package.json');
+var fs         = require('fs');
+var rename     = require('gulp-rename');
+var pkg        = require('../../package.json');
+var argv       = require('yargs').argv;
 
-gulp.task('markup', ['fonts'], function() {
-  var templateData = {
-       title: pkg.name
-  },
+gulp.task('markup', ['fonts', 'rev'], function() {
+
+  var
+  isProduction = argv.production,
   options = {
       ignorePartials: true, //ignores the unknown footer2 partial in the handlebars template, defaults to false
       // partials : {
@@ -25,10 +27,24 @@ gulp.task('markup', ['fonts'], function() {
             });
             var result = words.join('');
             return result;
+          },
+          assetPath: function (path, context) {
+              return ['', context.data.root[path]].join('/');
           }
-
       }
-  };
+  },
+  templateData;
+
+  if (isProduction) {
+    templateData = JSON.parse(fs.readFileSync('build/rev-manifest.json', 'utf8'));
+  }
+  else {
+    templateData = {
+      "app.css": "app.css",
+      "app.js": "app.js"
+    };
+  }
+  templateData.title = pkg.name;
 
   return gulp.src('app/app.hbs')
       .pipe(handlebars(templateData, options))
