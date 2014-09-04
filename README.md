@@ -1,84 +1,139 @@
-gulp-starter
+Ng-Buildkit
 ============
 
-Starter Gulp + Browserify project with examples of how to accomplish some common tasks and workflows. Read the [blog post](http://viget.com/extend/gulp-browserify-starter-faq) for more context, and check out the [Wiki](https://github.com/greypants/gulp-starter/wiki) for some good background knowledge.
+Ng-Buildkit was designed to automate tasks associated with development and allow for a continous cycle of development, integration, and deployment.
 
-Includes the following tools, tasks, and workflows:
+Starter AngularJS + Gulp + Browserify project equipped to handle the following:
 
-- [Browserify](http://browserify.org/) (with [browserify-shim](https://github.com/thlorenz/browserify-shim))
-- [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
-- [SASS](http://sass-lang.com/) (with [compass](http://compass-style.org/) and [source maps](https://github.com/sindresorhus/gulp-ruby-sass#sourcemap)!)
-- [CoffeeScript](http://coffeescript.org/) (with source maps!)
-- [jQuery](http://jquery.com/) (from npm)
-- [Backbone](http://backbonejs.org/) (from npm)
-- [Handlebars](http://handlebarsjs.com/) (as a backbone dependency)
-- [BrowserSync](http://browsersync.io) for live reloading and a static server
-- Image optimization
-- Error Notifications in Notification Center
-- Non common-js vendor code (like a jQuery plugin)
+- Dependency Management (npm, bower, browserify with browserify-shim)
+- Pre and Post Processing (linting, minification)
+- Scripts (javascript and or coffee-script with source maps!)
+- Styles (sass with bootstrap-sass, compass and source maps!)
+- Images (optimized and progresive)
+- Markup (dynamic markup using handlebar templates)
+- Handlebars (template processing for any file)
+- BrowserSync (test multiple targets simulatenously)
+- Live Reloading in html5Mode
+- Documentation (docular)
+- Testing (unit and integration testing with karma and protractor)
+- Travis (travis)
+- Deployment (bump, rev, and changlelog)
+- Opinionated (bootstrap-sass, ui-router, ui-bootstrap, lodash, etc.)
 
-If you've never used Node or npm before, you'll need to install Node.
-If you use homebrew, do:
 
-```
-brew install node
-```
 
-Otherwise, you can download and install from [here](http://nodejs.org/download/).
-
-### Install Gulp Globally
-
-Gulp must be installed globally in order to use the command line tools. *You may need to use `sudo`*
+## Instalation
 
 
 ```
-npm install -g gulp
+git clone https://github.com/dearfrankg/ng-buildkit
 ```
 
-Alternatively, you can run the version of gulp installed local to the project instead with
+
+## Major gulp commands
 
 
-```
-./node_modules/.bin/gulp
-```
+`gulp` default gulp command
 
-### Install Sass and Compass (if you haven't already)
+This command is equivelant to `gulp watch`.  To summarize it will watch and update, test and sync browser on changes.
 
+__dependency graph__
 
-The gulp-compass module relies on Compass already being installed on your system.
-
-If you have bundler installed, simply run bundle to install dependencies from the `Gemfile`
-
+`gulp-command: depends-on-this (then runs this)`
 
 ```
-bundle
+watch: browsersync
+browsersync: build (browsersync)
+build: browserify, images, sass, markup
+browserify: templates, lint (browserify)
+images: (images)
+sass: images (sass)
+markup: fonts, rev (index.hbs to index.html)
 ```
 
-Otherwise,
+`gulp unit` run unit tests
+
+`gulp e2e` run e2e tests
+
+`gulp test` run unit and e2e tests
+
+`gulp bump-patch` bump version to next patch rev, commit and tag
+
+`gulp bump-minor` bump version to next minor rev, commit and tag
+
+`gulp bump-major` bump version to next major rev, commit and tag
 
 
-```
-gem install sass
-gem install compass --pre
-```
+## Travis Status
 
-### Install npm dependencies
+[![Build Status](https://travis-ci.org/dearfrankg/ng-buildkit.svg?branch=master)](https://travis-ci.org/dearfrankg/ng-buildkit)
 
-```
-npm install
-```
 
-This runs through all dependencies listed in `package.json` and downloads them
-to a `node_modules` folder in your project directory.
 
-### Run gulp and be amazed.
+## License
 
-```
-gulp
-```
+The MIT License (MIT)
 
-This will run the `default` gulp task defined in `gulp/tasks/default.js`, which does the following:
-- Run 'watch', which has 2 task dependencies, `['setWatch', 'browserSync']`
-- `setWatch` sets a variable that tells the browserify task whether or not to use watchify.
-- `browserSync` has `build` as a task dependecy, so that all your assets will be processed before browserSync tries to serve them to you in the browser.
-- `build` includes the following tasks: `['browserify', 'sass', 'images', 'markup']`
+Copyright (c) 2014 Frank Gutierrez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+
+
+
+
+
+
+
+<div style="height:500px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
